@@ -15,6 +15,7 @@ VALUES
 ('Back_House');
 
 INSERT INTO Roles (title, salary, department_id)
+VALUES
 ('cook', 30000, 1),
-('dish Washer', 20000, 2),
+('dish washer', 20000, 2),
 ('host', 25000, 3);
