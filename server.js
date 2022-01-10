@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
+require("dotenv").config();
 
 // PORT designation
 const PORT = process.env.PORT || 3001;
@@ -10,10 +11,28 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// MySQL Connection 
+const db = mysql.createConnection(
+  process.env.db_NAME,
+  process.env.db_USER,
+  process.env.db_PW,
+  {
+    host: 'localhost',
+    // user: 'root',
+    // password: ``,
+    database: 'employee'
+  },
+  console.log('Connected to the employee database.')
+);
+
 app.get('/', (req, res) => {
   res.json({
     message: 'Hello World'
   });
+});
+
+db.query('SELECT * FROM employee', (err, rows) => {
+  console.log(rows);
 });
 
 //  Catchall route  (Not Found)
