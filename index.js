@@ -59,14 +59,14 @@ const startMenu = async () => {
         viewRole();
         break;
 
-      case "Add Employees":
+      case "Add Employee":
         employeeAdd();
         break;
       case "Add Department":
         departmentAdd();
         break;
 
-      case "Add Roles":
+      case "Add Role":
         roleAdd();
         break;
 
@@ -149,7 +149,7 @@ function roleAdd() {
         `INSERT INTO role (title, salary, department_id) VALUES('${answers.titleName}, ${answers.salary}, ${answers.departmentId}')`,
         (err) => {
           if (err) throw err;
-          console.log("Department created!");
+          console.log("Role created!");
           startMenu();
         }
       );
