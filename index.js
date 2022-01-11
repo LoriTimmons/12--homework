@@ -146,7 +146,9 @@ function roleAdd() {
     ])
     .then((answers) => {
       db.query(
-        `INSERT INTO role (title, salary, department_id) VALUES('${answers.titleName}, ${answers.salary}, ${answers.departmentId}')`,
+        `INSERT INTO role (title, salary, department_id) VALUES(${
+          answers.titleName
+        }, ${parseInt(answers.salary)}, ${answers.departmentId})`,
         (err) => {
           if (err) throw err;
           console.log("Role created!");
