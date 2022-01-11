@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS employee;
+DROP DATABASE IF EXISTS employeedb;
 
-CREATE DATABASE employee;
-USE employee;
+CREATE DATABASE employeedb;
+USE employeedb;

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/LoriTimmons/12--homework#readme",
   "dependencies": {
+    "console.table": "^0.10.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "inquirer": "^8.2.0",
