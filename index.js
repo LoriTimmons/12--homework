@@ -217,7 +217,7 @@ function employeeAdd() {
 }
 
 // Update employee 
-function employeeAdd() {
+function  employeeUpdate() {
   db.query("SELECT * FROM role", (err, results) => {
     var roleChoices = results.map((role) => ({
       name: role.title,
