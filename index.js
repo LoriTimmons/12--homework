@@ -244,7 +244,7 @@ function  employeeUpdate() {
   ]).then((answers) => {
     console.log(answers);
     db.query(
-      "UPDATE employee SET role_id WHERE role_id",
+      "UPDATE employee SET role_id = ? WHERE = ?", [answers.name, answers.roleUpdate],
       (err) => {
         if (err) throw err;
         console.log("This employee was updated!");
@@ -255,8 +255,12 @@ function  employeeUpdate() {
   })
 }
 
+// Look like this 
+// "UPDATE employee SET role_id = ? WHERE id = ?", PUT VARS HERE
+// EX "UPDATE employee SET role_id = ? WHERE id = ?",
+// [roleID, employeeId] --this is ANSWERS 
 
-
+// MAYBE [answers.name, answers.roleUpdate] YES do this. 
 
 // Update employee roles. See refresher in slack 
 // get employee db.q to get employee .map
