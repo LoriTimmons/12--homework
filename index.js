@@ -4,21 +4,6 @@ const db = require("./db/connection");
 const inquirer = require("inquirer");
 
 const consoleTable = require("console.table");
-// const Department = require('./lib/Department');
-// const Employee = require('./lib/Employee');
-// const Role = require('./lib/Role');
-
-// // rout test
-// app.get('/', (req, res) => {
-//   res.json({
-//     message: 'Hello World'
-//   });
-// });
-
-// // query selector - test
-// db.query('SELECT * FROM Roles', (err, rows) => {
-//   console.log(rows);
-// });
 
 // Start's application once connection is established.
 db.connect(function (err) {
@@ -225,26 +210,27 @@ function  employeeUpdate() {
     }));
     db.query("SELECT * FROM employee", (err, results) => {
       var employeeChoices = results.map((employee) => ({
-        name: employee.name,
+        name: `${employee.first_name} ${employee.last_name}`,
         value: employee.id,
       }));
-  inquirer.prompt ([
-    {
+      console.log(employeeChoices);
+      inquirer.prompt ([
+        {
       type: "list",
-      name: "name",
+      name: "employeeId",
       message: "Which employee are you updating?",
       choices: employeeChoices
     },
     {
       type: "list",
-      name: "roleUpdate",
+      name: "roleId",
       message: "What is the new role?",
       choices: roleChoices
     },
   ]).then((answers) => {
-    console.log(answers);
+    console.log("answers", answers);
     db.query(
-      "UPDATE employee SET = role_id = ? WHERE = ?", `['${answers.name}', '${answers.roleUpdate}']`,
+      "UPDATE employee SET role_id = ? WHERE id = ?", [answers.roleId, answers.employeeId],
       (err) => {
         if (err) throw err;
         console.log("This employee was updated!");
@@ -255,16 +241,4 @@ function  employeeUpdate() {
   })
 }
 
-// Look like this 
-// "UPDATE employee SET role_id = ? WHERE id = ?", PUT VARS HERE
-// EX "UPDATE employee SET role_id = ? WHERE id = ?",
-// [roleID, employeeId] --this is ANSWERS 
 
-// MAYBE [answers.name, answers.roleUpdate] YES do this. 
-
-// Update employee roles. See refresher in slack 
-// get employee db.q to get employee .map
-// Which E are you going to update 
-// What is their role another .map 
-
-// Use update name of the table set commlum - slack Slack
