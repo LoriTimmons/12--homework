@@ -10,7 +10,7 @@
   ## Installation
   To create this you need to work in the nodes modules and require the inquirer package, express, dotenv, console.table and mySQL12. Install
     ## Usage
-  Use this application to create an awesome README file. <br> Demonstration Video: [Watch the Demo]()<br>
+  Use this application to create an awesome README file. <br> Demonstration Video: [Watch the Demo](https://watch.screencastify.com/v/mfkoQsqXsNOPhgWrngmL)<br>
   ![VS Image 1](./assets/images/SS1.png)  
 
 
@@ -19,4 +19,4 @@
   #### Contact Me @: lorietimmons@gmail.com<br>
   #### GitHub Profile: LoriTimmons
   #### GitHub Repo Link: https://github.com/LoriTimmons/12--homework
-  #### Demo: 
+  #### Demo: https://watch.screencastify.com/v/mfkoQsqXsNOPhgWrngmL
