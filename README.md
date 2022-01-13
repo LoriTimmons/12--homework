@@ -6,7 +6,7 @@
 * [Questions / Issues](#Questions)<br>
 
   ## Description
-  This projects is designed to help an organization keep track of their employees. With this application you can view, add and update an employee roles. 
+  This projects is designed to help an organization keep track of their employees. With this application you can view and add employees, departments and roles. You can also update an current employee's roles. 
   ## Installation
   To create this you need to work in the nodes modules and require the inquirer package, express, dotenv, console.table and mySQL12. Install
     ## Usage
